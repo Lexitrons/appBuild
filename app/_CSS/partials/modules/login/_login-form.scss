@@ -1,0 +1,122 @@
+.login {
+	position: relative;
+	width: 350px;
+	background: $white;
+	background: 1px solid $blue;
+	margin: 0 auto;
+	color: $black;
+	box-shadow: 0 2px 10px -2px $black;
+	
+	&__title {
+		background: $black;
+		color: $white;
+		padding: 15px;
+		font-size: 1.25rem;
+
+	}
+
+	&__form {
+	}
+
+	&__list {
+		padding: 20px;
+	}
+
+	&__item {
+		& + & {
+			margin-top: 1em;
+		}
+	}
+	
+	&__label {
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	&__input {
+		font-size: 1rem;
+		font-family: $font-sans;
+		display: block;
+		width: 100%;
+		border: solid darken($gray, 5);
+		border-width: 0 0 1px;
+		outline-width: 0;
+	}
+}
+
+
+@keyframes grow {
+	0% {
+		transform: scale(0);
+	}
+
+	90% {
+		transform: scale(1.25);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100%);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.login-message {
+	display: flex;
+	overflow: hidden;
+	position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    align-items: center;
+	
+	svg {
+		display: block;
+		margin: 10px;
+		width: 30px;
+		fill: $white;
+		transform: scale(0);
+		animation: grow 0.3s  0.3s 1 forwards;
+	}
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: translateY(y);
+		animation: slideDown 0.3s;
+		animation-fill-mode: forwards;
+
+	}
+	&--error:before {
+		background: $red;
+	}
+
+	&--success:before {
+		background: $green;
+	}
+
+	&__text {
+		font-size: 0.9rem;
+		position: relative;
+		text-align: center;
+		font-weight: bold;
+		text-align: center;
+		color: $white;
+		transform: scale(0);
+		animation: grow 0.3s  0.4s 1 forwards;
+	}
+
+}

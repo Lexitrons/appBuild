@@ -1,0 +1,11 @@
+.home-hero {
+	&__title {
+		font-size: 3rem;
+		font-family: $font-serif;
+		font-weight: bold;
+	}
+
+	&__subtitle {
+		font-family: $font-sans;
+	}
+}
